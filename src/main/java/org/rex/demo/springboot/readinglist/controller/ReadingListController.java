@@ -15,7 +15,7 @@ import java.util.List;
  * Created by songsx-a on 2017/6/23.
  */
 @Controller
-@RequestMapping("/")
+@RequestMapping("/rl")
 public class ReadingListController {
 
     private ReadinglistRepository readinglistRepository;
@@ -39,6 +39,6 @@ public class ReadingListController {
     public String addToReadinglist(@PathVariable(name = "reader") String reader, Book book) {
         book.setReader(reader);
         readinglistRepository.save(book);
-        return "redirect:/{reader}";
+        return "redirect:/rl/{reader}";
     }
 }
